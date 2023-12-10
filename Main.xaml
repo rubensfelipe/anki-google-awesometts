@@ -1,0 +1,416 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_mots="C:\Users\ruben\OneDrive\Documentos\Idiomas\Francês\Mots.xlsm" this:Main.out_sounds="C:\Users\ruben\OneDrive\Documentos\Idiomas\Francês\Mots.xlsm" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_mots" Type="InArgument(x:String)" />
+    <x:Property Name="out_sounds" Type="InArgument(x:String)" />
+    <x:Property Name="BreakTriggerScopeInArgument" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1240,6846</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.Activities.Contracts</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Files.Models</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Excel.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Excel.Models</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Excel</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>DocumentFormat.OpenXml.InkML</x:String>
+      <x:String>DocumentFormat.OpenXml</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>DocumentFormat.OpenXml</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Activities.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="668,6781" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_phrase" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_son" />
+      <Variable x:TypeArguments="x:Int32" Name="index" />
+      <Variable x:TypeArguments="x:TimeSpan" Name="startTime" />
+      <Variable x:TypeArguments="x:TimeSpan" Name="endTime" />
+      <Variable x:TypeArguments="x:TimeSpan" Name="lastItemTime" />
+      <Variable x:TypeArguments="x:TimeSpan" Name="firstItemTime" />
+      <Variable x:TypeArguments="x:TimeSpan" Name="duration" />
+      <Variable x:TypeArguments="x:Double" Name="durationMinutes" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="606,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:TimeSpan">[startTime]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:TimeSpan">[System.DateTime.Now.TimeOfDay]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="606,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Inicio do processo: &quot;+startTime.ToString]" />
+    <ui:ReadRange AddHeaders="True" DataTable="[dt_phrase]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="606,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="A:A" SheetName="DicGPT" WorkbookPath="[in_mots]" />
+    <ui:BuildDataTable DataTable="[dt_son]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="606,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Phrase&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Son&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Utilisateur 1 - Anki" sap:VirtualizedContainerService.HintSize="606,563" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="3645ae79-6cde-4641-bcab-ee7825d297c8" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="450,272" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Ajouter'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="WindowMessages" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3645ae79-6cde-4641-bcab-ee7825d297c8" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CvTextArea="288, 75, 70, 21" CvTextArgument="Ajouter" CvType="Text" DesignTimeRectangle="290, 68, 66, 26" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Ajouter'" FullSelectorArgument="&lt;ctrl name='top toolbar' role='push button' /&gt;&lt;ctrl automationid='add' /&gt;&lt;ctrl name='Ajouter' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='top toolbar' role='push button' /&gt;&lt;ctrl automationid='add' /&gt;&lt;ctrl name='Ajouter' role='text' automationid='' check:text='Ajouter' /&gt;" Guid="3eb83c38-a393-4f7c-a4c5-0e7aba2c35c1" InformativeScreenshot="07b1a06565ce6809ac55a6707d380cfd.png" ScopeSelectorArgument="&lt;wnd app='anki.exe' cls='Qt652QWindowIcon' title='Utilisateur 1 - Anki' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="952, 0, 976, 1028" FilePath="C:\Users\ruben\AppData\Local\Programs\Anki\anki.exe" IconBase64="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" InformativeScreenshot="1252a12819da0e36c35183c0a259eb8a.png" Selector="&lt;wnd app='anki.exe' cls='Qt652QWindowIcon' title='Utilisateur 1 - Anki' /&gt;" Title="Ajouter" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[index]" DataTable="[dt_phrase]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="606,3511" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="572,3325" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Ajouter" sap:VirtualizedContainerService.HintSize="530,585" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="cbf87c08-38b7-44a8-a4a9-f3a534735167" Version="V2">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="450,294" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="388,179" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][d(ctrl)]t[u(ctrl)][u(hk)]" Version="V3" />
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="952, 0, 976, 1028" FilePath="C:\Users\ruben\AppData\Local\Programs\Anki\anki.exe" IconBase64="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" InformativeScreenshot="357a5e48097ddc0a9fd263894e7ab635.png" Selector="&lt;wnd app='anki.exe' cls='Qt652QWindowIcon' title='Ajouter' /&gt;" Title="Ajouter" />
+              </uix:NApplicationCard.TargetApp>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NApplicationCard>
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: AwesomeTTS: Add TTS Audio to Note" sap:VirtualizedContainerService.HintSize="530,1422" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="31f875e5-c78e-4e1b-9b2c-9e155d21ef30" Version="V2">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="496,1131" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="str_phrase" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:TimeSpan">[firstItemTime]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:TimeSpan">[System.DateTime.Now.TimeOfDay]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_9">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[str_phrase]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[CurrentRow(0).ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <If Condition="[String.IsNullOrEmpty(str_phrase)]" sap:VirtualizedContainerService.HintSize="434,295" sap2010:WorkflowViewState.IdRef="If_1">
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,113" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:Break sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="Break_1" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_8" />
+                      </If.Else>
+                    </If>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'grouping text.qt_scroll…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="31f875e5-c78e-4e1b-9b2c-9e155d21ef30" Text="[str_phrase]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable CvElementArea="929, 191, 339, 243" CvType="InputBox" DesignTimeRectangle="933, 196, 331, 232" DesignTimeScaleFactor="1.25" FriendlyName="'grouping text.qt_scroll…'" FullSelectorArgument="&lt;ctrl automationid='text.qt_scrollarea_viewport' /&gt;" FuzzySelectorArgument="&lt;ctrl automationid='text.qt_scrollarea_viewport' role='grouping' /&gt;" Guid="19ec306c-2d34-49a8-b36c-ab43213495be" InformativeScreenshot="1e3d60ea6c9ff5fd34833fcfa8c19c30.png" ScopeSelectorArgument="&lt;wnd app='anki.exe' cls='Qt652QWindowIcon' title='AwesomeTTS: Add TTS Audio to Note' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="434,179" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" Shortcuts="[d(hk)][d(ctrl)][k(enter)][u(ctrl)][u(hk)]" Version="V3" />
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="625, 237, 1292, 528" FilePath="C:\Users\ruben\AppData\Local\Programs\Anki\anki.exe" IconBase64="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" InformativeScreenshot="5c94515f2614b64a2e3cf740d99db3ef.png" Selector="&lt;wnd app='anki.exe' cls='Qt652QWindowIcon' title='AwesomeTTS: Add TTS Audio to Note' /&gt;" Title="AwesomeTTS: Add TTS Audio to Note" />
+              </uix:NApplicationCard.TargetApp>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NApplicationCard>
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Ajouter" sap:VirtualizedContainerService.HintSize="530,1150" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" ScopeGuid="41b5bf65-92fd-406c-899a-3aac33da3275" Version="V2">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="496,859" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="str_sound" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NGetText DisplayName="Get Text '[sound:google-978e9759-…'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="41b5bf65-92fd-406c-899a-3aac33da3275" TextString="[str_sound]" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable CvElementArea="28, 166, 921, 57" CvType="InputBox" DesignTimeRectangle="35, 175, 905, 37" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'[sound:google-978e9759-…'" FullSelectorArgument="&lt;ctrl name='editor' role='push button' /&gt;&lt;ctrl role='editable text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='editor' role='push button' /&gt;&lt;ctrl role='editable text' automationid='' /&gt;" Guid="10ecac28-f21f-4e11-828d-d189b88bdc93" InformativeScreenshot="65e8bea39ef86d4f820852408ea6f5a4.png" ScopeSelectorArgument="&lt;wnd app='anki.exe' cls='Qt652QWindowIcon' title='Ajouter' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                      </uix:NGetText.Target>
+                    </uix:NGetText>
+                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentRow(0),str_sound}]" DataTable="[dt_son]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="434,186" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                    <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts 'Front'" sap:VirtualizedContainerService.HintSize="434,199" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" ScopeIdentifier="41b5bf65-92fd-406c-899a-3aac33da3275" Shortcuts="[d(hk)][d(ctrl)]a[u(ctrl)][u(hk)][d(hk)][k(del)][u(hk)]" Version="V3">
+                      <uix:NKeyboardShortcuts.Target>
+                        <uix:TargetAnchorable CvElementArea="22, 133, 650, 76" CvType="InputBox" DesignTimeRectangle="29, 141, 639, 61" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'[sound:google-db178cb7-…'" FullSelectorArgument="&lt;ctrl name='editor' role='push button' /&gt;&lt;ctrl role='editable text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='editor' role='push button' /&gt;&lt;ctrl role='editable text' automationid='' /&gt;" Guid="f3e40962-968c-4071-b0e0-791a7ee184d6" InformativeScreenshot="91e1a6c59f29c587f671407a8788bd09.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='anki.exe' cls='Qt652QWindowIcon' title='Ajouter' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CvTextArea="47, 114, 37, 14" CvTextArgument="Front" CvType="Text" DesignTimeRectangle="48, 111, 36, 21" ElementType="Text" FriendlyName="'Front'" FullSelectorArgument="&lt;ctrl name='editor' role='push button' /&gt;&lt;ctrl name='Front' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='editor' role='push button' /&gt;&lt;ctrl name='Front' role='text' automationid='' check:text='Front' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAZCAYAAABD2GxlAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADWSURBVFhH7ZPRDYQgDEAv7NepmIRJ2KRb8N0TThFayGGa84jh48VY2/KE8goh0MwsQS1LUMsS1FIJemvIGIb1VcHdCEFwWCXcgrdkwBE2vj1IMDYxlnx61kfPR8P6Rh06gpyzvXdq+UhdFOQNkByw2C6SJY+6vEONmpgzuoPV34iFgBye+Xl3jvcddHAK9OpKoSuCX4+4iCWRVuNywUadiP1UkM1MYhbBZmxDHvG/BLuXpJi5UUHR+4NSMLJL5os1cJFErOjBRqYSnJElqGUJalmCOgK9AVkvKMVZiOGsAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NKeyboardShortcuts.Target>
+                    </uix:NKeyboardShortcuts>
+                    <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:TimeSpan">[lastItemTime]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:TimeSpan">[System.DateTime.Now.TimeOfDay]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="952, 0, 976, 1028" FilePath="C:\Users\ruben\AppData\Local\Programs\Anki\anki.exe" IconBase64="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" InformativeScreenshot="81818edf776508c729567ec5a664f736.png" Selector="&lt;wnd app='anki.exe' cls='Qt652QWindowIcon' title='Ajouter' /&gt;" Title="Ajouter" />
+              </uix:NApplicationCard.TargetApp>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEachRow>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="606,141" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Foram processados: &quot;+index.ToString+&quot; itens.&quot;]" />
+    <Assign sap:VirtualizedContainerService.HintSize="606,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:TimeSpan">[duration]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:TimeSpan">[lastItemTime-firstItemTime]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="606,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Double">[durationMinutes]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Double">[duration.TotalMinutes]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="606,141" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Inicio do item: &quot;+firstItemTime.ToString]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="606,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Fim do item: &quot;+lastItemTime.ToString]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="606,141" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Item/minuto: &quot;+durationMinutes.ToString+ &quot; minutos.&quot;]" />
+    <Assign sap:VirtualizedContainerService.HintSize="606,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:TimeSpan">[endTime]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:TimeSpan">[System.DateTime.Now.TimeOfDay]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="606,82" sap2010:WorkflowViewState.IdRef="Assign_7">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:TimeSpan">[duration]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:TimeSpan">[endTime-startTime]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="606,82" sap2010:WorkflowViewState.IdRef="Assign_8">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Double">[durationMinutes]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Double">[duration.TotalMinutes]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="606,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Fim do processo: &quot;+endTime.ToString]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="606,141" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Duração do processo: &quot;+durationMinutes.ToString + &quot; minutos.&quot;]" />
+    <ui:WriteRange AddHeaders="True" DataTable="[dt_son]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="606,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="DicGPT" StartingCell="E:E" WorkbookPath="[out_sounds]" />
+    <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="606,133" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="anki" />
+  </Sequence>
+</Activity>
