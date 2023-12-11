@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1794,7027</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1794,7149</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -140,7 +140,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="668,6962" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="668,7084" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_phrase" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_son" />
@@ -199,13 +199,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[index]" DataTable="[dt_phrase]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="606,3511" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[index]" DataTable="[dt_phrase]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="606,3633" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="572,3325" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="572,3447" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -302,15 +302,16 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NApplicationCard>
-            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Ajouter" sap:VirtualizedContainerService.HintSize="530,1150" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" ScopeGuid="41b5bf65-92fd-406c-899a-3aac33da3275" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Ajouter" sap:VirtualizedContainerService.HintSize="530,1272" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" ScopeGuid="41b5bf65-92fd-406c-899a-3aac33da3275" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="496,859" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="496,981" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="str_sound" />
+                      <Variable x:TypeArguments="x:String" Name="str_phrase" />
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -322,7 +323,15 @@
                         <uix:TargetAnchorable CvElementArea="28, 166, 921, 57" CvType="InputBox" DesignTimeRectangle="35, 175, 905, 37" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'[sound:google-978e9759-…'" FullSelectorArgument="&lt;ctrl name='editor' role='push button' /&gt;&lt;ctrl role='editable text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='editor' role='push button' /&gt;&lt;ctrl role='editable text' automationid='' /&gt;" Guid="10ecac28-f21f-4e11-828d-d189b88bdc93" InformativeScreenshot="65e8bea39ef86d4f820852408ea6f5a4.png" ScopeSelectorArgument="&lt;wnd app='anki.exe' cls='Qt652QWindowIcon' title='Ajouter' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                       </uix:NGetText.Target>
                     </uix:NGetText>
-                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CurrentRow(0),str_sound}]" DataTable="[dt_son]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="434,186" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                    <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_10">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[str_phrase]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[CurrentRow(0).ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{str_sound, str_phrase}]" DataTable="[dt_son]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="434,186" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                     <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts 'Front'" sap:VirtualizedContainerService.HintSize="434,199" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" ScopeIdentifier="41b5bf65-92fd-406c-899a-3aac33da3275" Shortcuts="[d(hk)][d(ctrl)]a[u(ctrl)][u(hk)][d(hk)][k(del)][u(hk)]" Version="V3">
                       <uix:NKeyboardShortcuts.Target>
                         <uix:TargetAnchorable CvElementArea="22, 133, 650, 76" CvType="InputBox" DesignTimeRectangle="29, 141, 639, 61" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'[sound:google-db178cb7-…'" FullSelectorArgument="&lt;ctrl name='editor' role='push button' /&gt;&lt;ctrl role='editable text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='editor' role='push button' /&gt;&lt;ctrl role='editable text' automationid='' /&gt;" Guid="f3e40962-968c-4071-b0e0-791a7ee184d6" InformativeScreenshot="91e1a6c59f29c587f671407a8788bd09.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='anki.exe' cls='Qt652QWindowIcon' title='Ajouter' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
@@ -411,7 +420,7 @@
     </Assign>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="606,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Fim do processo: &quot;+endTime.ToString]" />
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="606,141" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Duração do processo: &quot;+durationMinutes.ToString + &quot; minutos.&quot;]" />
-    <ui:WriteRange AddHeaders="True" DataTable="[dt_son]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="606,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="DicGPT" StartingCell="E:E" WorkbookPath="[out_sounds]" />
+    <ui:WriteRange AddHeaders="True" DataTable="[dt_son]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="606,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="DicGPT" StartingCell="D:D" WorkbookPath="[out_sounds]" />
     <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="606,133" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="anki" />
   </Sequence>
 </Activity>
